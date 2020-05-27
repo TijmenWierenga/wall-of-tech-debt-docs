@@ -174,6 +174,20 @@ paths:
                   $ref: '#/components/schemas/Tag-Read'
       operationId: get-tags
       description: Returns all tags
+    post:
+      summary: Create new tag
+      operationId: post-tags
+      responses:
+        '201':
+          description: Created
+      description: Creata a new tag
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag-Write'
+      tags:
+        - tags
 components:
   schemas:
     Issue-Read:
@@ -253,6 +267,14 @@ components:
           description: The readable description of a tag
       required:
         - id
+        - name
+    Tag-Write:
+      title: Tag-Write
+      type: object
+      properties:
+        name:
+          type: string
+      required:
         - name
 tags:
   - name: authentication
