@@ -193,6 +193,8 @@ components:
     Issue-Read:
       title: Issue-Read
       type: object
+      x-tags:
+        - issues
       properties:
         id:
           type: string
@@ -219,13 +221,20 @@ components:
                 type: integer
                 minimum: 0
                 maximum: 5
+            required:
+              - by
+              - amount
+        tags:
+          type: array
+          description: A list of tags belonging to the issue
+          items:
+            $ref: '#/components/schemas/Tag-Read'
       required:
         - id
         - title
         - createdAt
         - author
-      x-tags:
-        - issues
+        - tags
     IssueVote-Write:
       title: IssueVote-Write
       type: object
