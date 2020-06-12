@@ -188,6 +188,20 @@ paths:
               $ref: '#/components/schemas/Tag-Write'
       tags:
         - tags
+  /me:
+    get:
+      summary: Get authenticated user
+      tags:
+        - users
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User-Read'
+      operationId: get-me
+      description: Returns the user data of the authenticated user
 components:
   schemas:
     Issue-Read:
@@ -285,8 +299,26 @@ components:
           type: string
       required:
         - name
+    User-Read:
+      title: User-Read
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        username:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+      required:
+        - id
+        - username
+      description: ''
 tags:
   - name: authentication
   - name: issues
   - name: tags
   - name: voting
+  - name: users
