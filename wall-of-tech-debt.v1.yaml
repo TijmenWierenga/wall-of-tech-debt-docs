@@ -332,7 +332,6 @@ components:
       required:
         - id
         - username
-        - firstName
         - lastName
 tags:
   - name: authentication
