@@ -326,13 +326,16 @@ components:
         username:
           type: string
         firstName:
-          type: string
+          oneOf:
+            - type: string
+            - type: 'null'
         lastName:
-          type: string
+          oneOf:
+            - type: string
+            - type: 'null'
       required:
         - id
         - username
-        - lastName
 tags:
   - name: authentication
   - name: issues
