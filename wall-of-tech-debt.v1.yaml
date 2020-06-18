@@ -202,6 +202,22 @@ paths:
                 $ref: '#/components/schemas/User-Read'
       operationId: get-me
       description: Returns the user data of the authenticated user
+  /users:
+    get:
+      summary: Get all users
+      tags:
+        - users
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User-Read'
+      operationId: get-users
+      description: Returns all registered users.
 components:
   schemas:
     Issue-Read:
