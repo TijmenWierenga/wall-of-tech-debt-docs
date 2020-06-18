@@ -318,6 +318,7 @@ components:
     User-Read:
       title: User-Read
       type: object
+      description: ''
       properties:
         id:
           type: string
@@ -326,12 +327,13 @@ components:
           type: string
         firstName:
           type: string
+          nullable: true
         lastName:
           type: string
+          nullable: true
       required:
         - id
         - username
-      description: ''
 tags:
   - name: authentication
   - name: issues
