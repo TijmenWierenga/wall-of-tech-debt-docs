@@ -329,10 +329,12 @@ components:
           type:
             - string
             - 'null'
+          nullable: true
         lastName:
           type:
             - string
             - 'null'
+          nullable: true
       required:
         - id
         - username
