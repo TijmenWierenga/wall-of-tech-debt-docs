@@ -242,18 +242,7 @@ components:
         votes:
           type: array
           items:
-            type: object
-            properties:
-              by:
-                type: string
-                format: uuid
-              amount:
-                type: integer
-                minimum: 0
-                maximum: 5
-            required:
-              - by
-              - amount
+            $ref: '#/components/schemas/Vote-Read'
         tags:
           type: array
           description: A list of tags belonging to the issue
@@ -334,6 +323,19 @@ components:
       required:
         - id
         - username
+    Vote-Read:
+      title: Vote-Read
+      type: object
+      properties:
+        by:
+          type: string
+          format: uuid
+        amount:
+          type: number
+          minimum: 0
+      required:
+        - by
+        - amount
 tags:
   - name: authentication
   - name: issues
