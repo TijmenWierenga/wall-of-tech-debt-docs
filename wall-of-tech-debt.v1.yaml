@@ -257,6 +257,7 @@ components:
         - createdAt
         - author
         - tags
+        - description
     IssueVote-Write:
       title: IssueVote-Write
       type: object
