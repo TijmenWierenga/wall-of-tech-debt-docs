@@ -248,6 +248,9 @@ components:
           description: A list of tags belonging to the issue
           items:
             $ref: '#/components/schemas/Tag-Read'
+        description:
+          type: string
+          description: A description for the issue. Markdown is allowed here.
       required:
         - id
         - title
