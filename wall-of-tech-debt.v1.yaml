@@ -256,6 +256,7 @@ components:
         - title
         - createdAt
         - author
+        - votes
         - tags
         - description
     IssueVote-Write:
